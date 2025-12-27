@@ -1,23 +1,31 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Samtiny</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
 
-<h1>Samtiny Website Builder</h1>
-<p>Create simple websites easily</p>
+<body class="light">
+  <header>
+    <h1>Samtiny</h1>
+    <p>Build beautiful websites in minutes</p>
+    <button class="theme-btn" onclick="toggleTheme()">🌙 / ☀️</button>
+  </header>
 
-<input id="title" placeholder="Website title"><br><br>
-<textarea id="desc" placeholder="Website description"></textarea><br><br>
+  <main class="card">
+    <input id="title" placeholder="Website title">
+    <textarea id="desc" placeholder="Website description"></textarea>
 
-<button onclick="generate()">Generate</button>
-<button onclick="exportHTML()">Export HTML</button>
-<iframe id="preview" style="width:100%;height:300px;"></iframe>
+    <div class="buttons">
+      <button onclick="generate()">Generate</button>
+      <button onclick="exportHTML()">Export HTML</button>
+    </div>
 
-<script src="app.js"></script>
+    <iframe id="preview"></iframe>
+  </main>
+
+  <script src="app.js"></script>
 </body>
-</html>
+</html> 
