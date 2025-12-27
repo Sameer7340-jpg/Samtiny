@@ -1,17 +1,21 @@
-let generatedHTML = "";
+let html = "";
 
 function generate() {
   const title = document.getElementById("title").value;
   const desc = document.getElementById("desc").value;
 
-  generatedHTML = `
+  html = `
 <!DOCTYPE html>
 <html>
 <head>
   <title>${title}</title>
   <style>
-    body { font-family: Arial; padding: 30px; background:#f4f6fb; }
-    h1 { color:#6366f1; }
+    body {
+      font-family: system-ui;
+      padding: 40px;
+      background: #f4f7ff;
+    }
+    h1 { color: #6366f1; }
   </style>
 </head>
 <body>
@@ -21,23 +25,24 @@ function generate() {
 </html>
 `;
 
-  document.getElementById("preview").srcdoc = generatedHTML;
+  document.getElementById("preview").srcdoc = html;
 }
 
 function exportHTML() {
-  const blob = new Blob([generatedHTML], { type: "text/html" });
-  const link = document.createElement("a");
-  link.href = URL.createObjectURL(blob);
-  link.download = "website.html";
-  link.click();
+  const blob = new Blob([html], { type: "text/html" });
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = "website.html";
+  a.click();
 }
 
-// Dark / Light mode
-const toggle = document.getElementById("modeToggle");
+/* THEME TOGGLE — FIXED */
+const toggle = document.getElementById("themeToggle");
 toggle.onclick = () => {
-  document.body.classList.toggle("dark");
-  toggle.textContent =
-    document.body.classList.contains("dark")
-      ? "☀️ Light Mode"
-      : "🌙 Dark Mode";
+  const body = document.body;
+  const current = body.getAttribute("data-theme");
+  body.setAttribute(
+    "data-theme",
+    current === "light" ? "dark" : "light"
+  );
 };
