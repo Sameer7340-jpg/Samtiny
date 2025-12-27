@@ -1,46 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Samtiny</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
-<body data-theme="light">
 
-  <header class="hero">
-    <h1>Samtiny</h1>
-    <p>Build stunning websites in minutes ⚡</p>
-
-    <button id="themeToggle" class="toggle">
-      🌙 Switch Theme
-    </button>
-  </header>
+<body>
+  <!-- 🌙 THEME TOGGLE -->
+  <button id="themeToggle" aria-label="Toggle theme">
+    🌙
+  </button>
 
   <main class="container">
-    <div class="builder glass">
-      <input id="title" placeholder="Website title">
+    <h1>Samtiny</h1>
+    <p class="tagline">Build beautiful websites in minutes</p>
+
+    <div class="card">
+      <input id="title" placeholder="Website title" />
       <textarea id="desc" placeholder="Website description"></textarea>
 
-      <div class="buttons">
-        <button onclick="generate()">Generate</button>
+      <div class="actions">
+        <button class="primary" onclick="generate()">Generate</button>
         <button class="secondary" onclick="exportHTML()">Export HTML</button>
       </div>
     </div>
-
-    <div class="preview glass">
-      <iframe id="preview"></iframe>
-    </div>
   </main>
 
-  <footer>
-    <p>© 2025 Samtiny • Built with ❤️</p>
-  </footer>
-
   <script src="app.js"></script>
+
+  <!-- Firebase auth protection -->
+  <script type="module" src="firebase.js"></script>
+  <script type="module" src="auth.js"></script>
 </body>
 </html>
-<button onclick="logout()">Logout</button>
-
-<script type="module" src="firebase.js"></script>
-<script type="module" src="auth.js"></script>
