@@ -1,85 +1,122 @@
-:root {
-  --bg: #f4f6fb;
-  --text: #111;
-  --card: #ffffff;
+/* THEME VARIABLES */
+body[data-theme="light"] {
+  --bg: #f4f7ff;
+  --text: #0f172a;
+  --card: rgba(255,255,255,0.8);
   --primary: #6366f1;
 }
 
-body.dark {
-  --bg: #0f172a;
+body[data-theme="dark"] {
+  --bg: #020617;
   --text: #e5e7eb;
-  --card: #1e293b;
+  --card: rgba(30,41,59,0.75);
   --primary: #22d3ee;
+}
+
+/* GLOBAL */
+* {
+  box-sizing: border-box;
+  transition: all 0.3s ease;
 }
 
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: system-ui, sans-serif;
   background: var(--bg);
   color: var(--text);
-  transition: 0.3s;
 }
 
-header {
-  padding: 20px;
+/* HERO */
+.hero {
   text-align: center;
+  padding: 50px 20px;
 }
 
-header button {
-  margin-top: 10px;
-  padding: 6px 12px;
-  border-radius: 20px;
+.hero h1 {
+  font-size: 3rem;
+  margin: 0;
+}
+
+.hero p {
+  opacity: 0.8;
+  margin: 10px 0 20px;
+}
+
+/* TOGGLE */
+.toggle {
   border: none;
-  cursor: pointer;
+  padding: 10px 18px;
+  border-radius: 30px;
+  background: var(--primary);
+  color: white;
+  font-size: 1rem;
 }
 
-main {
+/* LAYOUT */
+.container {
   padding: 20px;
+  max-width: 900px;
+  margin: auto;
 }
 
-.card {
+/* GLASS CARD */
+.glass {
   background: var(--card);
-  padding: 15px;
-  border-radius: 12px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  backdrop-filter: blur(15px);
+  border-radius: 18px;
+  padding: 20px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
 }
 
-input, textarea {
+/* BUILDER */
+.builder input,
+.builder textarea {
   width: 100%;
-  padding: 10px;
-  margin: 8px 0;
-  border-radius: 8px;
+  padding: 12px;
+  border-radius: 10px;
   border: none;
+  margin-bottom: 10px;
+  font-size: 1rem;
 }
 
-.actions {
+/* BUTTONS */
+.buttons {
   display: flex;
   gap: 10px;
 }
 
 button {
+  flex: 1;
+  border: none;
+  padding: 12px;
+  border-radius: 12px;
   background: var(--primary);
   color: white;
-  padding: 10px;
-  border: none;
-  border-radius: 8px;
-  flex: 1;
+  font-size: 1rem;
 }
 
-.preview-box {
+button.secondary {
+  background: transparent;
+  color: var(--text);
+  border: 2px solid var(--primary);
+}
+
+/* PREVIEW */
+.preview {
   margin-top: 20px;
 }
 
 iframe {
   width: 100%;
   height: 300px;
-  border-radius: 12px;
   border: none;
+  border-radius: 14px;
   background: white;
 }
 
+/* FOOTER */
 footer {
   text-align: center;
   opacity: 0.6;
-  margin-top: 20px;
+  padding: 20px;
 }
