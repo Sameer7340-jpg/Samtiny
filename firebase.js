@@ -3,11 +3,13 @@ import { getAuth } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth
 import { getFirestore } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
 const firebaseConfig = {
-  apiKey: "PASTE_YOUR_API_KEY",
-  authDomain: "samtiny-auth.firebaseapp.com",
-  projectId: "samtiny-auth",
-  appId: "PASTE_YOUR_APP_ID"
-};
+    apiKey: "AIzaSyBgmKxKLsyOqq7ZTdvvsD8aT2_wcgDpmHs",
+    authDomain: "samtiny-auth.firebaseapp.com",
+    projectId: "samtiny-auth",
+    storageBucket: "samtiny-auth.firebasestorage.app",
+    messagingSenderId: "791323731204",
+    appId: "1:791323731204:web:c72916fb6fb2340d5c1c51"
+  };
 
 const app = initializeApp(firebaseConfig);
 
