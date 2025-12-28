@@ -1,27 +1,46 @@
-// 🌙 DARK / LIGHT MODE
-const toggle = document.getElementById("themeToggle");
+import { auth } from "./firebase.js";
+import { onAuthStateChanged, signOut } from
+"https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
 
-const savedTheme = localStorage.getItem("theme");
-if (savedTheme === "dark") {
-  document.body.classList.add("dark");
-  toggle.textContent = "☀️";
-}
+// Protect app
+onAuthStateChanged(auth, user => {
+  if (!user) location.href = "login.html";
+});
 
-toggle.onclick = () => {
-  document.body.classList.toggle("dark");
-  const isDark = document.body.classList.contains("dark");
-  toggle.textContent = isDark ? "☀️" : "🌙";
-  localStorage.setItem("theme", isDark ? "dark" : "light");
+// Logout
+document.getElementById("logout").onclick = () => {
+  signOut(auth).then(() => location.href = "login.html");
 };
 
-// 🚀 BUILDER LOGIC
-function generate() {
+// Theme
+document.getElementById("themeToggle").onclick = () => {
+  document.body.classList.toggle("dark");
+  localStorage.theme = document.body.classList.contains("dark") ? "dark" : "";
+};
+if (localStorage.theme === "dark") document.body.classList.add("dark");
+
+// Generate
+window.generate = () => {
   const title = document.getElementById("title").value;
-  const desc = document.getElementById("desc").value;
+  const content = document.getElementById("content").value;
 
-  alert(`Website Generated!\n\nTitle: ${title}\nDescription: ${desc}`);
-}
+  const html = `
+  <html><body>
+  <h1>${title}</h1>
+  <p>${content}</p>
+  </body></html>`;
 
-function exportHTML() {
-  alert("Export feature coming next 🚀");
-}
+  document.getElementById("preview").srcdoc = html;
+};
+
+// Export
+window.exportHTML = () => {
+  const blob = new Blob(
+    [document.getElementById("preview").srcdoc],
+    { type: "text/html" }
+  );
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = "samtiny.html";
+  a.click();
+};
