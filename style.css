@@ -1,4 +1,4 @@
-  :root {
+:root {
   --bg: #f4f4f4;
   --card: white;
   --text: black;
@@ -12,7 +12,7 @@
 
 body {
   margin: 0;
-  font-family: Arial;
+  font-family: Arial, sans-serif;
   background: var(--bg);
   color: var(--text);
 }
@@ -22,6 +22,22 @@ header {
   justify-content: space-between;
   padding: 15px;
   background: var(--card);
+}
+
+.layout {
+  display: flex;
+  flex-direction: column;
+}
+
+aside {
+  background: var(--card);
+  padding: 10px;
+}
+
+#projectList div {
+  padding: 8px;
+  border-bottom: 1px solid #ccc;
+  cursor: pointer;
 }
 
 .container {
@@ -39,4 +55,15 @@ iframe {
   height: 300px;
   margin-top: 15px;
   border-radius: 8px;
+}
+
+@media (min-width: 768px) {
+  .layout {
+    flex-direction: row;
+  }
+  aside {
+    width: 250px;
+    height: calc(100vh - 60px);
+    overflow-y: auto;
+  }
 }
