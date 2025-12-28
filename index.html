@@ -1,41 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Samtiny App</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Samtiny</title>
+
+  <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
 
-<header>
-  <h1>Samtiny</h1>
-  <div>
-    <button id="themeToggle">🌙</button>
-    <button id="logout">Logout</button>
+  <!-- Theme Toggle -->
+  <div class="top-bar">
+    <label class="switch">
+      <input type="checkbox" id="themeToggle">
+      <span class="slider"></span>
+    </label>
   </div>
-</header>
 
-<div class="layout">
+  <!-- Main Card -->
+  <div class="card">
+    <h1>Samtiny</h1>
 
-  <aside id="projects">
-    <h3>Your Projects</h3>
-    <div id="projectList"></div>
-  </aside>
+    <input type="email" id="email" placeholder="Email" />
+    <input type="password" id="password" placeholder="Password" />
 
-  <main class="container">
-    <input id="title" placeholder="Website Title">
-    <textarea id="content" placeholder="Website content"></textarea>
+    <button onclick="login()">Login</button>
+    <button class="secondary" onclick="signup()">Sign Up</button>
 
-    <button id="saveBtn">💾 Save Project</button>
-    <button onclick="generate()">Generate</button>
-    <button onclick="exportHTML()">Export HTML</button>
+    <p id="msg"></p>
+  </div>
 
-    <iframe id="preview"></iframe>
-  </main>
-
-</div>
-
-<script type="module" src="app.js"></script>
+  <script type="module" src="firebase.js"></script>
+  <script type="module" src="app.js"></script>
 </body>
 </html>
