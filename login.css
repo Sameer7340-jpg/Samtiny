@@ -1,0 +1,51 @@
+body {
+  font-family: Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+:root {
+  --bg: #f4f4f4;
+  --card: white;
+  --text: black;
+}
+
+.dark {
+  --bg: #121212;
+  --card: #1e1e1e;
+  --text: white;
+}
+
+.card {
+  background: var(--card);
+  padding: 25px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 320px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+input, button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 6px;
+  border: none;
+}
+
+button {
+  background: #6c63ff;
+  color: white;
+  cursor: pointer;
+}
+
+#themeToggle {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+}
