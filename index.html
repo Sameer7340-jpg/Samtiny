@@ -16,14 +16,24 @@
   </div>
 </header>
 
-<div class="container">
-  <input id="title" placeholder="Website Title">
-  <textarea id="content" placeholder="Website content"></textarea>
+<div class="layout">
 
-  <button onclick="generate()">Generate</button>
-  <button onclick="exportHTML()">Export HTML</button>
+  <aside id="projects">
+    <h3>Your Projects</h3>
+    <div id="projectList"></div>
+  </aside>
 
-  <iframe id="preview"></iframe>
+  <main class="container">
+    <input id="title" placeholder="Website Title">
+    <textarea id="content" placeholder="Website content"></textarea>
+
+    <button id="saveBtn">💾 Save Project</button>
+    <button onclick="generate()">Generate</button>
+    <button onclick="exportHTML()">Export HTML</button>
+
+    <iframe id="preview"></iframe>
+  </main>
+
 </div>
 
 <script type="module" src="app.js"></script>
