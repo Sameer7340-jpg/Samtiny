@@ -1,17 +1,12 @@
-import { initializeApp } from
-"https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-
-import { getAuth } from
-"https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
-
-import { getFirestore } from
-"https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+import { getAuth } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+import { getFirestore } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
 const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
+  apiKey: "PASTE_YOUR_API_KEY",
   authDomain: "samtiny-auth.firebaseapp.com",
   projectId: "samtiny-auth",
-  appId: "YOUR_APP_ID"
+  appId: "PASTE_YOUR_APP_ID"
 };
 
 const app = initializeApp(firebaseConfig);
